@@ -5,81 +5,94 @@ import { Link2 as Link2Icon, Mail } from 'lucide-react'
 import {
   PageHero,
   SectionHeading,
-} from '../components/ui/index'
-
-import {
-  staggerContainer,
-  staggerItem,
-  fadeUp,
-} from '../utils/animations'
+} from '../components/ui'
 
 import {
   teamMembers,
   regions,
 } from '../data/siteData'
 
-const TeamCard = ({ member }) => (
-  <motion.div
-    variants={staggerItem}
-    className="group relative overflow-hidden border border-white/5 hover:border-champagne-500/20 transition-all duration-500 bg-charcoal-900"
-  >
-    {/* PHOTO */}
-    <div className="relative h-[320px] sm:h-[380px] md:h-[420px] overflow-hidden">
-      <img
-        src={member.image}
-        alt={member.name}
-        className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700 md:group-hover:scale-105"
-        loading="lazy"
-      />
+const TeamCard = ({ member }) => {
+  return (
+    <div className="group relative overflow-hidden border border-white/5 hover:border-champagne-500/20 transition-all duration-500 bg-charcoal-900">
+      
+      {/* IMAGE */}
+      <div className="relative w-full h-[320px] sm:h-[380px] overflow-hidden bg-navy-950">
+        <img
+          src={member.image}
+          alt={member.name}
+          loading="eager"
+          decoding="async"
+          fetchPriority="high"
+          className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 md:group-hover:scale-105"
+        />
 
-      {/* OVERLAY */}
-      <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900 via-charcoal-900/30 to-transparent" />
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900 via-charcoal-900/20 to-transparent" />
 
-      {/* HOVER ICONS */}
-      <div className="absolute inset-0 bg-navy-950/70 opacity-0 md:group-hover:opacity-100 transition-opacity duration-400 flex items-center justify-center gap-4">
-        <a
-          href="mailto:info@renardinternational.com"
-          className="w-10 h-10 border border-champagne-500/40 flex items-center justify-center text-champagne-400 hover:bg-champagne-500/10 transition-colors"
-          aria-label={`Email ${member.name}`}
-        >
-          <Mail size={15} />
-        </a>
+        {/* Region Badge */}
+        <div className="absolute top-4 left-4 z-10">
+          <span className="px-3 py-1 text-[10px] uppercase tracking-[0.2em] bg-navy-950/80 border border-champagne-500/20 text-champagne-400">
+            {member.region}
+          </span>
+        </div>
 
-        <a
-          href="https://ca.linkedin.com/company/renard-international-hospitality-search-consultants"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-10 h-10 border border-champagne-500/40 flex items-center justify-center text-champagne-400 hover:bg-champagne-500/10 transition-colors"
-          aria-label={`LinkedIn ${member.name}`}
-        >
-          <Link2Icon size={15} />
-        </a>
+        {/* Hover Icons Desktop */}
+        <div className="hidden md:flex absolute inset-0 bg-navy-950/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 items-center justify-center gap-4">
+          <a
+            href="mailto:info@renardinternational.com"
+            className="w-10 h-10 border border-champagne-500/40 flex items-center justify-center text-champagne-400 hover:bg-champagne-500/10"
+          >
+            <Mail size={15} />
+          </a>
+
+          <a
+            href="https://ca.linkedin.com/company/renard-international-hospitality-search-consultants"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-10 h-10 border border-champagne-500/40 flex items-center justify-center text-champagne-400 hover:bg-champagne-500/10"
+          >
+            <Link2Icon size={15} />
+          </a>
+        </div>
       </div>
 
-      {/* REGION BADGE */}
-      <div className="absolute top-4 left-4">
-        <span className="font-body text-[10px] tracking-[0.2em] uppercase text-champagne-400/90 bg-navy-950/70 backdrop-blur-sm px-3 py-1 border border-champagne-500/20">
-          {member.region}
-        </span>
+      {/* CONTENT */}
+      <div className="p-5 md:p-6">
+        <h3 className="font-heading text-xl md:text-2xl text-white mb-2">
+          {member.name}
+        </h3>
+
+        <p className="text-champagne-400/80 text-xs uppercase tracking-[0.15em] mb-4">
+          {member.title}
+        </p>
+
+        <p className="text-white/70 text-sm leading-relaxed">
+          {member.bio}
+        </p>
+
+        {/* Mobile Icons */}
+        <div className="flex md:hidden items-center gap-3 mt-5">
+          <a
+            href="mailto:info@renardinternational.com"
+            className="w-9 h-9 border border-champagne-500/30 flex items-center justify-center text-champagne-400"
+          >
+            <Mail size={14} />
+          </a>
+
+          <a
+            href="https://ca.linkedin.com/company/renard-international-hospitality-search-consultants"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-9 h-9 border border-champagne-500/30 flex items-center justify-center text-champagne-400"
+          >
+            <Link2Icon size={14} />
+          </a>
+        </div>
       </div>
     </div>
-
-    {/* INFO */}
-    <div className="p-5 md:p-6">
-      <h3 className="font-heading text-xl md:text-2xl text-white font-medium mb-2 group-hover:text-champagne-100 transition-colors">
-        {member.name}
-      </h3>
-
-      <p className="font-body text-champagne-400/80 text-xs tracking-[0.15em] uppercase mb-4">
-        {member.title}
-      </p>
-
-      <p className="font-body text-white/70 text-sm leading-relaxed">
-        {member.bio}
-      </p>
-    </div>
-  </motion.div>
-)
+  )
+}
 
 export default function OurTeamPage() {
   return (
@@ -91,7 +104,7 @@ export default function OurTeamPage() {
         backgroundImage="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1600&q=70"
       />
 
-      {/* TEAM GRID */}
+      {/* TEAM SECTION */}
       <section className="py-16 md:py-24 bg-charcoal-900">
         <div className="container-luxury">
           <SectionHeading
@@ -100,34 +113,21 @@ export default function OurTeamPage() {
             subtitle="Our consultants are based in key hospitality markets around the world."
           />
 
-          <motion.div
-            variants={staggerContainer(0.06)}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
-          >
-            {teamMembers.map((member, i) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {teamMembers.map((member) => (
               <TeamCard
                 key={member.name}
                 member={member}
-                index={i}
               />
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* GLOBAL PRESENCE */}
       <section className="py-16 md:py-24 bg-navy-950">
         <div className="container-luxury">
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="text-center mb-14"
-          >
+          <div className="text-center mb-14">
             <p className="label-luxury mb-4">
               Global Presence
             </p>
@@ -135,20 +135,13 @@ export default function OurTeamPage() {
             <h2 className="font-display text-3xl md:text-5xl font-light text-white leading-tight">
               Wherever You Are, We Are
             </h2>
-          </motion.div>
+          </div>
 
-          <motion.div
-            variants={staggerContainer(0.08)}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
-          >
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {regions.map((region) => (
-              <motion.div
+              <div
                 key={region.name}
-                variants={staggerItem}
-                className="bg-charcoal-900 border border-white/5 p-6 md:p-8 hover:border-champagne-500/20 transition-all duration-400"
+                className="bg-charcoal-900 border border-white/5 p-6 md:p-8"
               >
                 <p className="label-luxury mb-5">
                   {region.name}
@@ -158,49 +151,42 @@ export default function OurTeamPage() {
                   {region.countries.map((c) => (
                     <li
                       key={c}
-                      className="flex items-center gap-3 text-sm font-body text-white/70"
+                      className="flex items-center gap-3 text-sm text-white/70"
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-champagne-500/50 flex-shrink-0" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-champagne-500/50" />
                       {c}
                     </li>
                   ))}
                 </ul>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* CTA */}
       <section className="py-16 md:py-24 bg-charcoal-900 border-t border-white/5">
         <div className="container-luxury text-center">
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
+          <p className="label-luxury mb-4">
+            Join Our Team
+          </p>
+
+          <h2 className="font-display text-3xl md:text-5xl text-white font-light mb-6 leading-tight">
+            Interested in Joining Renard International?
+          </h2>
+
+          <p className="text-white/70 mb-10 max-w-2xl mx-auto leading-relaxed">
+            We are always looking for exceptional hospitality professionals who want to transition into executive search and make an impact globally.
+          </p>
+
+          <a
+            href="mailto:info@renardinternational.com"
+            className="inline-flex items-center gap-3 border border-champagne-500/30 px-7 py-4 text-sm tracking-[0.2em] uppercase text-champagne-400 hover:bg-champagne-500 hover:text-navy-950 transition-all duration-500"
           >
-            <p className="label-luxury mb-4">
-              Join Our Team
-            </p>
+            Get in Touch
 
-            <h2 className="font-display text-3xl md:text-5xl text-white font-light mb-6 leading-tight">
-              Interested in Joining Renard International?
-            </h2>
-
-            <p className="font-body text-white/70 mb-10 max-w-2xl mx-auto leading-relaxed">
-              We are always looking for exceptional hospitality professionals who want to transition into executive search and make an impact globally.
-            </p>
-
-            <a
-              href="mailto:info@renardinternational.com"
-              className="inline-flex items-center gap-3 border border-champagne-500/30 px-7 py-4 text-sm tracking-[0.2em] uppercase text-champagne-400 hover:bg-champagne-500 hover:text-navy-950 transition-all duration-500"
-            >
-              Get in Touch
-
-              <Mail size={15} />
-            </a>
-          </motion.div>
+            <Mail size={15} />
+          </a>
         </div>
       </section>
     </>
