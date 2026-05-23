@@ -156,103 +156,102 @@ export const services = [
 ]
 
 export const teamMembers = [
+  { name: 'Stephen J. Renard', title: 'President', region: 'Global', bio: 'Founder and President of Renard International with over 50 years of experience in hospitality executive recruitment.', image: 'https://renardinternational.com/wp-content/uploads/2024/06/Steve-Landscape2-Cropped-1.png' },
+  { name: 'Robin Sheardown', title: 'Executive Vice President', region: 'Global', bio: 'Executive Vice President bringing decades of leadership in global hospitality recruitment.', image: 'https://renardinternational.com/wp-content/uploads/2024/06/Robin-Landscape1-Cropped-1.png' },
+  { name: 'Pina Mercuri', title: 'Controller', region: 'Americas', bio: 'Financial controller overseeing the firm\'s financial operations and integrity.', image: 'https://renardinternational.com/wp-content/uploads/2024/06/pina-edit.png' },
+  { name: 'Sylvia Menezes', title: 'Director Of Worldwide Recruitment', region: 'Global', bio: 'Directing worldwide recruitment operations across all hospitality verticals.', image: 'https://renardinternational.com/wp-content/uploads/2024/06/Sylvia-Landscape1-Cropped-1.png' },
+  { name: 'Brian Renard', title: 'Senior Executive Consultant', region: 'Americas', bio: 'Senior consultant specializing in executive-level placements across the Americas.', image: 'https://renardinternational.com/wp-content/uploads/2024/06/Brian-Landscape1-Cropped-1.png' },
+  { name: 'Ashok Sharma', title: 'Executive Consultant', region: 'Asia Pacific', bio: 'Executive consultant with deep expertise in Asia Pacific hospitality markets.', image: 'https://renardinternational.com/wp-content/uploads/2024/06/Ashok-Landscape1-Cropped-1.png' },
+  { name: 'Yasmin Khambatta', title: 'Executive Assistant & Hospitality Search Consultant', region: 'Global', bio: 'Executive assistant to the President and hospitality search consultant.', image: 'https://renardinternational.com/wp-content/uploads/2024/06/Yasmin-Landscape2-Cropped-1.png' },
+  { name: 'Yudeisy Lugo', title: 'Administrative Assistant', region: 'Americas', bio: 'Administrative professional supporting the Renard International team.', image: 'https://renardinternational.com/wp-content/uploads/2024/06/Yudeisy-Landscape1-Cropped-1.png' },
+  { name: 'Bianca Morini', title: 'Social Media Specialist', region: 'Global', bio: 'Managing Renard International\'s social media presence and digital communications.', image: 'https://renardinternational.com/wp-content/uploads/2024/06/IMG_8999-1.png' },
+  { name: 'Meera Rocha', title: 'Administrative Assistant', region: 'Americas', bio: 'Administrative professional supporting daily operations at Renard International.', image: 'https://renardinternational.com/wp-content/uploads/2024/06/IMG_8993-1.png' },
+  { name: 'Yash Addivigadoo', title: 'Recruitment Researcher', region: 'Global', bio: 'Recruitment researcher supporting executive search mandates worldwide.', image: 'https://renardinternational.com/wp-content/uploads/2024/06/Yash-Addivigadoo-1.png' },
+  { name: 'Lisa Renard', title: 'Hospitality Search Consultant', region: 'Americas', bio: 'Hospitality search consultant with a focus on executive placements.', image: 'https://renardinternational.com/wp-content/uploads/2024/06/Lisa-Landscape1-Cropped-1.png' },
+  { name: 'Elsa Kampman', title: 'International Search Consultant', region: 'Europe', bio: 'International search consultant specializing in European hospitality markets.', image: 'https://renardinternational.com/wp-content/uploads/2025/02/Elsa-Kampman-Photo.jpg' },
+]
+
+export const regions = [
   {
-    name: 'Jacques Renard',
-    title: 'Founder & Chairman',
-    region: 'Global',
-    bio: 'With over 50 years in hospitality executive recruitment, Jacques founded Renard International and established it as the gold standard in the industry.',
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80',
+    name: 'Americas',
+    countries: ['United States', 'Canada', 'Mexico', 'Brazil', 'Caribbean', 'Latin America'],
   },
   {
-    name: 'Sarah Mitchell',
-    title: 'Managing Director, Americas',
-    region: 'Americas',
-    bio: 'Sarah leads our North and South American operations, bringing 20+ years of hospitality sector expertise and an extensive global network.',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80',
+    name: 'Europe',
+    countries: ['United Kingdom', 'France', 'Germany', 'Spain', 'Italy', 'Switzerland'],
   },
   {
-    name: 'David Chen',
-    title: 'Senior Director, Asia Pacific',
-    region: 'Asia Pacific',
-    bio: 'David manages relationships across the Asia Pacific region, with deep expertise in luxury hospitality and resort management recruitment.',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80',
+    name: 'Asia Pacific',
+    countries: ['China', 'Japan', 'Singapore', 'Australia', 'India', 'Southeast Asia'],
   },
   {
-    name: 'Emma Rousseau',
-    title: 'Director, Europe & Middle East',
-    region: 'EMEA',
-    bio: 'Emma\'s extensive network spans Europe and the Middle East, where she specializes in ultra-luxury hotel and resort executive placements.',
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80',
+    name: 'Middle East & Africa',
+    countries: ['UAE', 'Saudi Arabia', 'Qatar', 'South Africa', 'Kenya', 'Egypt'],
+  },
+]
+
+export const valueAddedServices = [
+  {
+    title: 'Executive Assessment',
+    description:
+      'In-depth behavioural and competency-based assessments to evaluate leadership potential, cultural alignment, and long-term fit for your organization.',
   },
   {
-    name: 'Michael Okafor',
-    title: 'Director, Africa',
-    region: 'Africa',
-    bio: 'Michael champions emerging hospitality markets across Africa, connecting world-class talent with the continent\'s rapidly growing luxury sector.',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80',
+    title: 'Compensation Benchmarking',
+    description:
+      'Market-aligned salary data and compensation intelligence to help you structure competitive offers that attract and retain top-tier talent.',
   },
   {
-    name: 'Isabella Torres',
-    title: 'Executive Search Consultant',
-    region: 'Global',
-    bio: 'Isabella specializes in culinary and F&B executive placements at Michelin-starred establishments and leading luxury hospitality groups worldwide.',
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80',
+    title: 'Onboarding Support',
+    description:
+      'Structured post-placement follow-up and advisory support to ensure a smooth transition and accelerate performance in the first 90 days.',
+  },
+  {
+    title: 'Succession Planning',
+    description:
+      'Strategic guidance on building leadership pipelines and identifying internal and external candidates for critical future roles.',
+  },
+  {
+    title: 'Confidential Search',
+    description:
+      'Discreet, off-market searches for sensitive leadership transitions — protecting your brand and ensuring complete confidentiality throughout.',
   },
 ]
 
 export const testimonials = [
   {
     quote:
-      'Renard International transformed our leadership team. Their understanding of luxury hospitality culture is unmatched — they delivered candidates we could not have found anywhere else.',
-    author: 'CEO, Leading European Hotel Group',
-    company: 'Five-Star Resort Collection, Europe',
+      'Renard International delivered an outstanding General Manager within three weeks. Their understanding of our brand culture was exceptional — the placement has been a tremendous success.',
+    author: 'Chief Human Resources Officer',
+    company: 'Leading Luxury Hotel Group, Dubai',
     rating: 5,
   },
   {
     quote:
-      'After 15 years of partnership, Renard remains our first call for senior hires. Their global network and meticulous vetting process consistently delivers exceptional results.',
-    author: 'Chief People Officer',
-    company: 'Global Hospitality Brand, 150+ Properties',
+      'We have partnered with Renard for over a decade across multiple continents. Their global network and depth of hospitality knowledge is unmatched in the industry.',
+    author: 'Vice President, Talent Acquisition',
+    company: 'International Resort & Casino Group',
     rating: 5,
   },
   {
     quote:
-      'My placement through Renard opened doors I never imagined. They understood my ambitions and found a role perfectly aligned with both my experience and my goals.',
-    author: 'General Manager',
-    company: 'Ultra-Luxury Resort, Middle East',
+      'The team at Renard truly understands the nuances of executive hospitality recruitment. Every candidate they presented was thoroughly vetted and aligned with our values.',
+    author: 'Regional Director of Operations',
+    company: 'Boutique Hotel Collection, Europe',
     rating: 5,
   },
   {
     quote:
-      'The caliber of candidates Renard presents is extraordinary. Every submission reflects deep industry knowledge and a genuine commitment to finding the right cultural fit.',
-    author: 'VP Talent Acquisition',
-    company: 'Integrated Resort, Asia Pacific',
+      'Renard International found us a CFO for our expanding portfolio in Asia Pacific in record time. Their professionalism and market insight made all the difference.',
+    author: 'Chief Executive Officer',
+    company: 'Hospitality Investment Group, Singapore',
     rating: 5,
   },
-]
-
-export const regions = [
-  { name: 'Americas', countries: ['Canada', 'USA', 'Mexico', 'Brazil', 'Caribbean Islands'] },
-  { name: 'Europe', countries: ['UK', 'France', 'Germany', 'Spain', 'Italy', 'Switzerland', 'UAE'] },
-  { name: 'Asia Pacific', countries: ['Singapore', 'China', 'Japan', 'Australia', 'Thailand', 'Maldives'] },
-  { name: 'Middle East & Africa', countries: ['UAE', 'Saudi Arabia', 'Qatar', 'South Africa', 'Egypt'] },
-]
-
-export const valueAddedServices = [
   {
-    title: 'Executive Assessment',
-    description: 'Comprehensive evaluation of executive candidates including behavioral profiling, leadership competency assessment, and cultural alignment scoring.',
-  },
-  {
-    title: 'Market Intelligence',
-    description: 'In-depth compensation benchmarking, talent mapping, and industry insights to inform your hiring strategy and competitive positioning.',
-  },
-  {
-    title: 'Onboarding Support',
-    description: 'Post-placement integration support to ensure smooth executive transitions, maximizing retention and early performance success.',
-  },
-  {
-    title: 'Retained Search',
-    description: 'Dedicated exclusive search assignments for the most critical and confidential senior-level appointments requiring absolute discretion.',
+    quote:
+      'What sets Renard apart is their genuine commitment to long-term success. They followed up months after placement to ensure everything was going well. Truly a partner.',
+    author: 'Director of Human Resources',
+    company: 'Five-Star Resort, Caribbean',
+    rating: 5,
   },
 ]
