@@ -36,7 +36,7 @@ const TeamCard = ({ member, index }) => (
           className="w-10 h-10 border border-champagne-500/40 flex items-center justify-center text-champagne-400 hover:bg-champagne-500/10 transition-colors"
           aria-label={`LinkedIn - ${member.name}`}
         >
-          <Link2 size={15} />
+          <Link2Icon size={15} />
         </a>
       </div>
 
