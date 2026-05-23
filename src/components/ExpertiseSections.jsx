@@ -79,13 +79,13 @@ export default function ExpertiseSection() {
                       className={`font-display text-[30px] leading-snug transition-all duration-300 ${
                         activeId === item.id
                           ? 'text-white'
-                          : 'text-white/60 group-hover:text-white/90'
+                          : 'text-white/75 group-hover:text-white'
                       }`}
                     >
                       {item.title}
                     </p>
 
-                    <p className="font-body text-sm text-white/35 mt-2 tracking-wide">
+                    <p className="font-body text-sm text-white/50 mt-2 tracking-wide">
                       {item.subtitle}
                     </p>
                   </div>
@@ -152,7 +152,7 @@ export default function ExpertiseSection() {
                     {active.title}
                   </h3>
 
-                  <p className="font-body text-lg text-white/65 leading-relaxed max-w-2xl mb-10">
+                  <p className="font-body text-lg text-white/80 leading-relaxed max-w-2xl mb-10">
                     {active.description}
                   </p>
 
@@ -211,7 +211,7 @@ export default function ExpertiseSection() {
                   {item.title}
                 </h3>
 
-                <p className="font-body text-white/50 text-sm leading-relaxed">
+                <p className="font-body text-white/70 text-sm leading-relaxed">
                   {item.description}
                 </p>
               </div>
