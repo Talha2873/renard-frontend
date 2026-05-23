@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { staggerContainer, fadeUp, viewportConfig, staggerItem } from '../utils/animations'
+import { staggerContainer, viewportConfig, staggerItem } from '../utils/animations'
 import { expertise } from '../data/siteData'
 import { ArrowRight } from 'lucide-react'
 
@@ -22,6 +22,7 @@ export default function ExpertiseSection() {
           className="mb-16 md:mb-20"
         >
           <p className="label-luxury mb-4">Our Expertise</p>
+
           <h2 className="font-display text-5xl md:text-6xl font-light text-white leading-tight max-w-2xl">
             Executive-Level Specializations
           </h2>
@@ -37,7 +38,11 @@ export default function ExpertiseSection() {
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={viewportConfig}
-                transition={{ delay: i * 0.06, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                transition={{
+                  delay: i * 0.06,
+                  duration: 0.6,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
                 onClick={() => setActiveId(item.id)}
                 className={`w-full text-left px-8 py-6 border-b border-white/5 group transition-all duration-300 relative ${
                   activeId === item.id
@@ -55,17 +60,27 @@ export default function ExpertiseSection() {
 
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className={`font-display text-lg font-light leading-snug transition-colors duration-200 ${
-                      activeId === item.id ? 'text-white' : 'text-white/50 group-hover:text-white/80'
-                    }`}>
+                    <p
+                      className={`font-display text-lg font-light leading-snug transition-colors duration-200 ${
+                        activeId === item.id
+                          ? 'text-white'
+                          : 'text-white/60 group-hover:text-white/90'
+                      }`}
+                    >
                       {item.title}
                     </p>
-                    <p className="font-body text-xs text-white/25 mt-1">{item.subtitle}</p>
+
+                    <p className="font-body text-xs text-white/35 mt-1">
+                      {item.subtitle}
+                    </p>
                   </div>
+
                   <ArrowRight
                     size={14}
                     className={`flex-shrink-0 transition-all duration-300 ${
-                      activeId === item.id ? 'text-champagne-400 translate-x-0' : 'text-white/20 -translate-x-2 opacity-0 group-hover:opacity-100 group-hover:translate-x-0'
+                      activeId === item.id
+                        ? 'text-champagne-400 translate-x-0'
+                        : 'text-white/20 -translate-x-2 opacity-0 group-hover:opacity-100 group-hover:translate-x-0'
                     }`}
                   />
                 </div>
@@ -81,28 +96,46 @@ export default function ExpertiseSection() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                transition={{
+                  duration: 0.4,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
                 className="h-full"
               >
-                <div className="h-80 overflow-hidden relative">
+                {/* FIXED IMAGE SECTION */}
+                <div className="h-[420px] overflow-hidden relative">
                   <img
                     src={active.image}
                     alt={active.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-center"
+                    style={{ objectPosition: 'center top' }}
                   />
+
                   <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/30 to-transparent" />
+
                   <div className="absolute inset-0 bg-gradient-to-r from-navy-950/80 to-transparent" />
 
                   {/* Icon overlay */}
                   <div className="absolute bottom-8 left-8">
-                    <span className="font-display text-5xl text-champagne-400/40">{active.icon}</span>
+                    <span className="font-display text-5xl text-champagne-400/40">
+                      {active.icon}
+                    </span>
                   </div>
                 </div>
 
                 <div className="p-8 md:p-10">
-                  <p className="label-luxury mb-3">{active.subtitle}</p>
-                  <h3 className="font-display text-3xl text-white font-light mb-5">{active.title}</h3>
-                  <p className="font-body text-white/55 leading-relaxed mb-8">{active.description}</p>
+                  <p className="label-luxury mb-3">
+                    {active.subtitle}
+                  </p>
+
+                  <h3 className="font-display text-3xl text-white font-light mb-5">
+                    {active.title}
+                  </h3>
+
+                  <p className="font-body text-white/65 leading-relaxed mb-8">
+                    {active.description}
+                  </p>
+
                   <a
                     href="https://careers.renardinternational.com/"
                     target="_blank"
@@ -138,12 +171,22 @@ export default function ExpertiseSection() {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   loading="lazy"
                 />
+
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900 via-charcoal-900/40 to-transparent" />
               </div>
+
               <div className="p-5">
-                <p className="text-2xs font-body tracking-widest uppercase text-champagne-500/70 mb-1.5">{item.subtitle}</p>
-                <h3 className="font-heading text-base text-white font-medium mb-2">{item.title}</h3>
-                <p className="font-body text-white/40 text-xs leading-relaxed line-clamp-2">{item.description}</p>
+                <p className="text-2xs font-body tracking-widest uppercase text-champagne-500/70 mb-1.5">
+                  {item.subtitle}
+                </p>
+
+                <h3 className="font-heading text-base text-white font-medium mb-2">
+                  {item.title}
+                </h3>
+
+                <p className="font-body text-white/50 text-xs leading-relaxed line-clamp-2">
+                  {item.description}
+                </p>
               </div>
             </motion.div>
           ))}
